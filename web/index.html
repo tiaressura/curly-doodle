@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>curly-doodle · web template</title>
+    <meta
+      name="description"
+      content="An interactive doodle pad built on the dependency-free curly-doodle geometry toolkit."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">〰️</span>
+        <div>
+          <h1 class="brand__name">curly-doodle</h1>
+          <p class="brand__tag">web template</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Project links">
+        <a href="https://github.com/tiaressura/curly-doodle">GitHub</a>
+        <a href="../README.md">README</a>
+      </nav>
+    </header>
+
+    <main id="main" class="layout">
+      <section class="panel stage" aria-labelledby="stage-heading">
+        <h2 id="stage-heading" class="visually-hidden">Doodle pad</h2>
+
+        <div class="canvas-wrap">
+          <canvas id="pad" aria-label="Doodle canvas"></canvas>
+        </div>
+
+        <div class="toolbar">
+          <button type="button" data-action="undo" disabled>Undo</button>
+          <button type="button" data-action="clear" disabled>Clear</button>
+          <p class="hint">Draw with your mouse, stylus or finger. <kbd>⌘/Ctrl</kbd> + <kbd>Z</kbd> to undo.</p>
+        </div>
+      </section>
+
+      <aside class="panel stats" aria-labelledby="stats-heading">
+        <h2 id="stats-heading">Live stats</h2>
+        <p class="stats__lead">Computed on every frame with the curly-doodle geometry helpers.</p>
+
+        <dl class="stats__grid">
+          <div class="stat">
+            <dt>Strokes</dt>
+            <dd data-stat="strokes">0</dd>
+          </div>
+          <div class="stat">
+            <dt>Points</dt>
+            <dd data-stat="points">0</dd>
+          </div>
+          <div class="stat">
+            <dt>Path length</dt>
+            <dd data-stat="length">—</dd>
+          </div>
+          <div class="stat">
+            <dt>Bounding box</dt>
+            <dd data-stat="box">—</dd>
+          </div>
+          <div class="stat stat--wide">
+            <dt>Centroid</dt>
+            <dd data-stat="centroid">—</dd>
+          </div>
+        </dl>
+
+        <h3 class="stats__subheading">SVG path</h3>
+        <pre class="stats__path" data-stat="svg" aria-live="polite">—</pre>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>MIT licensed · built with zero dependencies</p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
